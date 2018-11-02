@@ -48,6 +48,7 @@ instance_groups:
                 jobs:
                 - redis-server
                 - health-check # optional post-deploy lifecycle errand
+                - training-insert # optional post-deploy lifecycle errand
                 - cleanup-data # optional pre-delete lifecycle errand
             stemcell:
               os: ubuntu-trusty
@@ -76,6 +77,7 @@ instance_groups:
                   persistence: <TRUE | FALSE> # attach a persistent disk below if true
                 lifecycle_errands:
                   post_deploy: health-check # optional post-deploy lifecycle errand
+                  post_deploy: training-insert # inserts random data to 
                   pre_delete: cleanup-data # optional pre-delete lifecycle errand
                 instance_groups:
                   - name: redis-server
@@ -85,6 +87,12 @@ instance_groups:
                     networks: [<FROM_CLOUD_CONFIG>]
                     azs: [<FROM_CLOUD_CONFIG>]
                   - name: health-check # optional post-deploy lifecycle errand
+                    lifecycle: errand
+                    vm_type: <FROM_CLOUD_CONFIG>
+                    instances: 1
+                    networks: [<FROM_CLOUD_CONFIG>]
+                    azs: [<FROM_CLOUD_CONFIG>
+                  - name: training-insert # optional post-deploy lifecycle errand
                     lifecycle: errand
                     vm_type: <FROM_CLOUD_CONFIG>
                     instances: 1
