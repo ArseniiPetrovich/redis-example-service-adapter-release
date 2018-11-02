@@ -1,3 +1,9 @@
 [submodule "src/github.com/pivotal-cf-experimental/redis-example-service-adapter"]
 	path = src/github.com/pivotal-cf-experimental/redis-example-service-adapter
 	url = git@github.com:pivotal-cf-experimental/redis-example-service-adapter.git
+[submodule "redis-example-service-adapter"]
+	path = redis-example-service-adapter
+	url = https://github.com/ArseniiPetrovich/redis-example-service-adapter
+[submodule "src/github.com/ArseniiPetrovich/redis-example-service-adapter"]
+	path = src/github.com/ArseniiPetrovich/redis-example-service-adapter
+	url = https://github.com/ArseniiPetrovich/redis-example-service-adapter
