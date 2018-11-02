@@ -76,8 +76,7 @@ instance_groups:
                 properties:
                   persistence: <TRUE | FALSE> # attach a persistent disk below if true
                 lifecycle_errands:
-                  post_deploy: health-check # optional post-deploy lifecycle errand
-                  post_deploy: training-insert # inserts random data to 
+                  post_deploy: [health-check, training-insert] # optional post-deploy lifecycle errand 
                   pre_delete: cleanup-data # optional pre-delete lifecycle errand
                 instance_groups:
                   - name: redis-server
